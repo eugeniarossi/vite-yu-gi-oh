@@ -1,5 +1,6 @@
-@use '_partials/reset' as *;
 @use '_partials/variables' as *;
+
+@import "bootstrap/scss/bootstrap";
 
 body {
     font-family: "Noto Sans Zanabazar Square";
