@@ -10,7 +10,7 @@ export default {
 
 <style scoped lang="scss">
     h2 {
-        padding: .625rem 2.1875rem;
+        padding: 1.5625rem 2.1875rem;
         font-weight: 400;
     }
 </style>
