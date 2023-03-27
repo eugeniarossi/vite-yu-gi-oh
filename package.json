@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/noto-sans-zanabazar-square": "^4.5.11",
     "vue": "^3.2.47"
   },
   "devDependencies": {
