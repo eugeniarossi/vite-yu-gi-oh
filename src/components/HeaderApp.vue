@@ -5,12 +5,7 @@ export default {
 </script>
 
 <template>
-    <h2>Yu-Gi-Oh Api</h2>
+    <h2 class="fs-3 py-3 px-5">Yu-Gi-Oh Api</h2>
 </template>
 
-<style scoped lang="scss">
-    h2 {
-        padding: 1.5625rem 2.1875rem;
-        font-weight: 400;
-    }
-</style>
+<style scoped lang="scss"></style>
