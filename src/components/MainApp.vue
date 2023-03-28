@@ -53,6 +53,7 @@ main {
 
     #cards-found {
         background-color: $secondary;
+        margin-bottom: -1.5rem;
     }
 }
 </style>
