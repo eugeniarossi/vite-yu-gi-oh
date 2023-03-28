@@ -26,8 +26,8 @@ export default {
 <template>
     <main>
         <div class="container pt-1 pb-3">
-            <select class="form-select m-3"> // https://db.ygoprodeck.com/api/v7/archetypes.php
-                <option selected>Select</option>
+            <select class="form-select m-3" v-model="store.selectValue" @change="$emit('search')">
+                <option selected></option>
                 <option :value="archetype.archetype_name" v-for="archetype in archetypes">{{ archetype.archetype_name }}</option>
             </select>
 

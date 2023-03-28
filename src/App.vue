@@ -22,13 +22,26 @@ export default {
             this.store.cards = response.data.data;
             this.store.cardsFound = response.data.data.length;
         })
+    },
+    methods: {
+      searchCards() {
+        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php', {
+          params: {
+            archetype: store.selectValue
+          }
+        })  
+        .then((response) => {
+            this.store.cards = response.data.data;
+            this.store.cardsFound = response.data.data.length;
+        })
+      }
     }
 }
 </script>
 
 <template>
   <HeaderApp />
-  <MainApp />
+  <MainApp @search="searchCards"/>
 </template>
 
 <style lang="scss"></style>
