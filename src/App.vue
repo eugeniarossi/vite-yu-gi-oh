@@ -11,37 +11,41 @@ export default {
     HeaderApp,
     MainApp
   },
-    data() {
-        return {
-            store,
-        }
-    },
-    created() {
-        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')  
-        .then((response) => {
+  data() {
+    return {
+      store,
+    }
+  },
+  methods: {
+    searchCards() {
+      if (store.selectValue === '') {
+        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+          .then((response) => {
             this.store.cards = response.data.data;
             this.store.cardsFound = response.data.data.length;
-        })
-    },
-    methods: {
-      searchCards() {
+          })
+      } else {
         axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php', {
           params: {
             archetype: store.selectValue
           }
-        })  
-        .then((response) => {
+        })
+          .then((response) => {
             this.store.cards = response.data.data;
             this.store.cardsFound = response.data.data.length;
-        })
+          })
       }
     }
+  },
+  created() {
+    this.searchCards();
+  }
 }
 </script>
 
 <template>
   <HeaderApp />
-  <MainApp @search="searchCards"/>
+  <MainApp @search="searchCards" />
 </template>
 
 <style lang="scss"></style>
