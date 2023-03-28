@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <header class="d-flex align-items-center px-3 py-4">
+    <header class="d-flex align-items-center p-3">
         <img src="../../public/logo.png" alt="logo">
         <h2 class="fs-3 px-3">Yu-Gi-Oh Api</h2>
     </header>
