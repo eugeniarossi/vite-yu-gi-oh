@@ -12,7 +12,7 @@ export default {
 <template>
     <main>
         <div class="container pt-1 pb-3">
-            <select class="form-select m-3">
+            <select class="form-select m-3"> // https://db.ygoprodeck.com/api/v7/archetypes.php
                 <option selected>Alien</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>

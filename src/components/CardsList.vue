@@ -2,6 +2,8 @@
 import axios from 'axios';
 import CardElement from './CardElement.vue';
 
+import { store } from '../store';
+
 export default {
     name: 'CardsList',
     components: {
@@ -9,15 +11,15 @@ export default {
     },
     data() {
         return {
-            cardsData: []
+            store
         }
     },
     created() {
-        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')  
         .then((response) => {
             console.log(response);
-            this.cardsData = response.data.data;
-            console.log(this.cardsData)
+            this.store.cards = response.data.data;
+            this.store.cardsFound = response.data.data.length;
         })
     }
 }
@@ -25,11 +27,9 @@ export default {
 
 <template>
     <div class="container p-0">
-        <div class="row g-3">
-            <div class="col-12 col-sm-3" v-for="card in cardsData.slice(0,50)">
-                <CardElement :img="card.card_images[0].image_url"
-                :title="card.name"
-                :type="card.archetype"/>
+        <div class="row cols-5 g-3">
+            <div class="col-12 col-sm-3" v-for="card in store.cards.slice(0,50)">
+                <CardElement :img="card.card_images[0].image_url" :name="card.name.toUpperCase()" :archetype="card.archetype"/>
             </div>
         </div>
     </div>
