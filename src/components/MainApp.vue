@@ -1,10 +1,16 @@
 <script>
 import CardsList from './CardsList.vue';
+import { store } from '../store';
 
 export default {
     name: 'Main',
     components: {
         CardsList
+    },
+    data() {
+        return {
+            store
+        }
     }
 }
 </script>
@@ -20,7 +26,7 @@ export default {
             </select>
             <div id="cards" class="bg-white p-5">
                 <div id="cards-found">
-                    <h6 class="text-white p-3 fw-bold">Found 39 cards</h6>
+                    <h6 class="text-white p-3 fw-bold">Found {{ store.cardsFound }} cards</h6>
                 </div>
                 <CardsList />
             </div>
