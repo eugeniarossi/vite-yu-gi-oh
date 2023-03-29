@@ -34,6 +34,10 @@ export default {
             this.store.cards = response.data.data;
             this.store.cardsFound = response.data.data.length;
           })
+          .catch((error) => {
+            this.store.cards = [];
+            this.store.cardsFound = 0;
+          })
       }
     }
   },
